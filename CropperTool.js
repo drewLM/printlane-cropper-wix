@@ -1,8 +1,8 @@
-let $image = $('#image');
+const $image = $('#image');
 
 function cropperinit(){
   var image = $image;
-  var cropper = new Cropper($image, {
+  var cropper = new Cropper(image, {
     viewMode: 1,
     dragMode: 'move',
     aspectRatio: 2100/100,
