@@ -1,7 +1,8 @@
+let $image = $('#image');
 
-window.addEventListener('DOMContentLoaded', function () {
-  var image = document.querySelector('#image');
-  var cropper = new Cropper(image, {
+function cropperinit(){
+  var image = $image;
+  var cropper = new Cropper($image, {
     viewMode: 1,
     dragMode: 'move',
     aspectRatio: 2100/100,
@@ -18,6 +19,26 @@ window.addEventListener('DOMContentLoaded', function () {
 
     
   });
+}
 
+function cropperDestory() {
+        $image.cropper("destroy"); 
+}
+  
+function updateCropperImage(url) {
+        $image.attr("src" , url);
+        refreshCropper();
+    }
+
+function refreshCropper() {
+        cropperDestory();
+        cropperInit();
+    }
+
+window.onmessage = event => {
+     if(data.toUpdateImageURL) {
+            let url = data.updateImageURL;
+            updateCropperImage(url);
+        }
 
 });
