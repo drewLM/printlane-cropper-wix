@@ -2,11 +2,9 @@
 
 let imageurl = document.querySelector('#image');
 
-window.addEventListener('DOMContentLoaded', Cropperstart())
-
-function Cropperstart() {
+window.addEventListener('DOMContentLoaded', function (){
   const image = imageurl
-  const cropper = new Cropper(image, {
+  const WallCrop = new Cropper(image, {
     viewMode: 1,
     dragMode: 'move',
     aspectRatio: 230/100,
@@ -20,12 +18,12 @@ function Cropperstart() {
     background:false,
     
   });
-}
+});
 
 
 window.onmessage = (event) => {
   if(event.data) {
          let newlink = event.data;
-         this.cropper.replace(newlink);
+         this.WallCrop.replace(newlink);
                  }
     };
