@@ -26,6 +26,6 @@ window.onmessage = event => {
   let {data} = event;
   if(data.toUpdateImageURL === true) {
          let newlink = data.updateImageURL;
-         cropper.replace(String(newlink));
+         cropper.replace(newlink);
                  }
     };
