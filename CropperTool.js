@@ -1,4 +1,4 @@
-onst $image = $('#image');
+const $image = $('#image');
 
 function cropperInit(){
   var image = $image;
