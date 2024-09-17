@@ -37,7 +37,7 @@ function refreshCropper() {
 
 window.onmessage = event => {
   let{data} = event
-     if(data.updateImageURL) {
+     if(data.toUpdateImageURL) {
             let url = data.updateImageURL;
             updateCropperImage(url);
         }
