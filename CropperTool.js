@@ -20,12 +20,12 @@ function Cropperstart() {
     background:false,
     
   });
-  cropper.replace(newlink);
 }
 
 
 window.onmessage = (event) => {
   if(event.data) {
          let newlink = event.data;
+         this.cropper.replace(newlink);
                  }
     };
