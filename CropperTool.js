@@ -35,8 +35,8 @@ function refreshCropper() {
         cropperInit();
     }
 
-window.onmessage = event => {
-  let{data} = event
+window.onmessage = e => {
+  let {data} = e;
      if(data.toUpdateImageURL) {
             let url = data.updateImageURL;
             updateCropperImage(url);
