@@ -1,7 +1,12 @@
 
-window.addEventListener('DOMContentLoaded', function () {
-  var image = document.querySelector('#image');
-  var cropper = new Cropper(image, {
+
+let imageurl = document.querySelector('#image');
+
+window.addEventListener('DOMContentLoaded', Cropperstart())
+
+function Cropperstart() {
+  const image = imageurl
+  const cropper = new Cropper(image, {
     viewMode: 1,
     dragMode: 'move',
     aspectRatio: 230/100,
@@ -15,5 +20,12 @@ window.addEventListener('DOMContentLoaded', function () {
     background:false,
     
   });
-  cropperBox.$center('contain')
-});
+}
+
+window.onmessage = event => {
+  let {data} = event;
+  if(data.toUpdateImageURL === true) {
+         let newlink = data.updateImageURL;
+         cropper.replace(String(newlink));
+                 }
+    };
