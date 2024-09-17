@@ -20,5 +20,6 @@ function cropperInit(){
     
   });
 
+  cropperBox.$center('contain')
 
 };
