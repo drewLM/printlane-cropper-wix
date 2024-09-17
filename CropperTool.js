@@ -1,6 +1,6 @@
 const $image = $('#image');
 
-function cropperinit(){
+function cropperInit(){
   var image = $image;
   var cropper = new Cropper(image, {
     viewMode: 1,
