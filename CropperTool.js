@@ -1,11 +1,10 @@
-const $image = $('#image');
 
-function cropperInit(){
-  var image = $image;
+window.addEventListener('DOMContentLoaded', function () {
+  var image = document.querySelector('#image');
   var cropper = new Cropper(image, {
     viewMode: 1,
     dragMode: 'move',
-    aspectRatio: 2100/100,
+    aspectRatio: 230/100,
     autoCropArea: 1,
     restore: false,
     center: false,
@@ -14,12 +13,7 @@ function cropperInit(){
     toggleDragModeOnDblclick: false,
     zoomable: false,
     background:false,
-    guides: false,
-    center: false,
-
     
   });
-
   cropperBox.$center('contain')
-
-};
+});
