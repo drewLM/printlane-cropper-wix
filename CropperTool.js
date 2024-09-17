@@ -23,10 +23,4 @@ function Cropperstart() {
 }
 
 
-window.onmessage = (event) => {
-  let {data} = event;
-  if(data.toUpdateImageURL === true) {
-         let newlink = data.updateImageURL;
-         this.cropper.replace(newlink);
-                 }
-    };
+
