@@ -19,26 +19,6 @@ function cropperInit(){
 
     
   });
-}
 
-function cropperDestory() {
-        $image.cropper("destroy"); 
-}
-  
-function updateCropperImage(url) {
-        $image.attr("src" , url);
-        refreshCropper();
-    }
-
-function refreshCropper() {
-        cropperDestory();
-        cropperInit();
-    }
-
-window.onmessage = event => {
-     if(data.event.updateImageURL) {
-            let url = data.updateImageURL;
-            updateCropperImage(url);
-        }
 
 };
